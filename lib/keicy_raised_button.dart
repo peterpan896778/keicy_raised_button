@@ -19,7 +19,7 @@ class KeicyRaisedButton extends StatelessWidget {
     this.onPressed,
     this.elevation = 5,
     this.borderWidth = 0,
-    this.borderColor = Colors.white,
+    this.borderColor,
     this.padding,
   }) : super(key: key);
   final Widget child;
@@ -57,7 +57,7 @@ class KeicyRaisedButton extends StatelessWidget {
       width: width,
       height: height,
       decoration: BoxDecoration(
-        border: Border.all(width: borderWidth, color: borderColor),
+        border: Border.all(width: borderWidth, color: borderColor ?? color),
         borderRadius: BorderRadius.all(
           Radius.circular(borderRadius + 2),
         ),
