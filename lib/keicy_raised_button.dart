@@ -11,6 +11,7 @@ class KeicyRaisedButton extends StatelessWidget {
     this.width = double.infinity,
     this.height = 50.0,
     this.color = Colors.white,
+    this.disabledColor,
     this.textColor = Colors.black,
     this.borderRadius = 0.0,
     this.loading = false,
@@ -24,6 +25,7 @@ class KeicyRaisedButton extends StatelessWidget {
   }) : super(key: key);
   final Widget child;
   final Color color;
+  final Color disabledColor;
   final Color textColor;
   final double width;
   final double height;
@@ -70,7 +72,7 @@ class KeicyRaisedButton extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
         ),
         color: color,
-        disabledColor: color,
+        disabledColor: disabledColor ?? color,
         textColor: textColor,
         onPressed: onPressed,
       ),
