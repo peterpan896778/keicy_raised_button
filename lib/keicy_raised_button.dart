@@ -22,6 +22,7 @@ class KeicyRaisedButton extends StatelessWidget {
     this.borderWidth = 0,
     this.borderColor,
     this.padding,
+    this.gradient,
   }) : super(key: key);
   final Widget child;
   final Color color;
@@ -38,6 +39,7 @@ class KeicyRaisedButton extends StatelessWidget {
   final double borderWidth;
   final Color borderColor;
   final EdgeInsetsGeometry padding;
+  final Gradient gradient;
 
   Widget buildSpinner(BuildContext context) {
     if (progressIndicatorSize == null) progressIndicatorSize = height / 2;
@@ -59,10 +61,11 @@ class KeicyRaisedButton extends StatelessWidget {
       width: width,
       height: height,
       decoration: BoxDecoration(
-        border: Border.all(width: borderWidth, color: borderColor ?? color),
+        border: Border.all(width: borderWidth, color: gradient != null ? Colors.transparent : borderColor ?? color),
         borderRadius: BorderRadius.all(
           Radius.circular(borderRadius + 2),
         ),
+        gradient: gradient,
       ),
       child: RaisedButton(
         elevation: elevation,
@@ -71,7 +74,7 @@ class KeicyRaisedButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
         ),
-        color: color,
+        color: gradient == null ? color : Colors.transparent,
         disabledColor: disabledColor ?? color,
         textColor: textColor,
         onPressed: onPressed,
