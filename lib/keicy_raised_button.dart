@@ -18,7 +18,7 @@ class KeicyRaisedButton extends StatelessWidget {
     this.brightness = Brightness.dark,
     this.progressIndicatorSize,
     this.onPressed,
-    this.elevation = 5,
+    this.elevation = 0,
     this.borderWidth = 0,
     this.borderColor,
     this.padding,
