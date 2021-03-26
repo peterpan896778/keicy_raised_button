@@ -61,7 +61,7 @@ class KeicyRaisedButton extends StatelessWidget {
       width: width,
       height: height,
       decoration: BoxDecoration(
-        border: Border.all(width: borderWidth, color: gradient != null ? Colors.transparent : borderColor ?? color),
+        border: Border.all(width: borderWidth, color: gradient != null ? Colors.transparent : borderColor ?? Colors.transparent),
         borderRadius: BorderRadius.all(
           Radius.circular(borderRadius + 2),
         ),
